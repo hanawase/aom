@@ -6,6 +6,10 @@
 	<title>El bunker del Age</title>
 	<style>
 
+		* {
+			box-sizing: border-box;
+		}
+
 		body {
 			margin: 0;
 			background: #f5f5c7;
@@ -36,7 +40,7 @@
 		.img-container {
 			width: 100%;
 			margin-bottom: 5px;
-			height: 175px;
+			height: 164px;
 			background-repeat: no-repeat;
 			background-size: cover;
 		}
@@ -49,24 +53,42 @@
 		    background: lightyellow;
 		}
 
-		#replays-table td {
-			width: 253px;
-		}
-
-		table {
+		.table {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
 			margin: 0 auto;
-		}
-
-		table, td, tr {
+			padding: 0 2.5px;
 			border: 1px solid black;
 		}
 
-		td {
-			padding: 10px;
+		.table.is-replays {
+			border: none;
 		}
 
-		td img {
+		.table.is-team, .table.is-comments {
+			padding: 2.5px;
+		}
+
+		.table > div {
+			margin: 5px 2.5px;
+			border: 1px solid black;
+			padding: 10px;
+		} 
+
+		.table.is-replays > div {
+			width: 241px;
+		}
+
+		.table.is-comments > div{
+			margin: 2.5px;
 			width: 100%;
+		}
+
+		.table.is-team > div{
+			margin: 2.5px;
+			width: 19%;
+			flex-grow: 1
 		}
 
 		nav ul {
@@ -119,45 +141,28 @@
 				<div class="container">
 				<h2 id="replays">Replays</h2>
 				<p>Actualizados cada vez que se nos da la gana de subir más replays. Esperen partidas de 3v3 y 4v4 en las que donde no sucede nada hasta el minuto 20 cuando alguien se digna a mandar un ataque con unidades de la Edad Clásica. A menos que sea Ayax, quien raidea todas las partidas con sus Turma que son irritablemente molestos PORQUÉ SIGUES HACIENDONOS ESTO!?</p>
-				<table id="replays-table">
-					<tr>
-						<td>
-							<div class="img-container" style="background-image: url(screenshots/merc_rush_110418.jpg)"></div>
-							<a href="replays/merc_rush_110418.rcx">Spam Mercenarios</a>
-							<div>"Hide yo kids, hide yo wife, cause they’re rapin’ everybody out here.”</div>
-						</td>
-						<td>
-							<img src="img/preview.jpg" alt="Replay 1">
-							<a href="replay.scx">Piero vs. Diego</a>
-						</td>
-						<td>
-							<img src="img/preview.jpg" alt="Replay 1">
-							<a href="replay.scx">Piero vs. Diego</a>
-						</td>
-						<td>
-							<img src="img/preview.jpg" alt="Replay 1">
-							<a href="replay.scx">Piero vs. Diego</a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<img src="img/preview.jpg" alt="Replay 1">
-							<a href="replay.scx">Piero vs. Diego</a>
-						</td>
-						<td>
-							<img src="img/preview.jpg" alt="Replay 1">
-							<a href="replay.scx">Piero vs. Diego</a>
-						</td>
-						<td>
-							<img src="img/preview.jpg" alt="Replay 1">
-							<a href="replay.scx">Piero vs. Diego</a>
-						</td>
-						<td>
-							<img src="img/preview.jpg" alt="Replay 1">
-							<a href="replay.scx">Piero vs. Diego</a>
-						</td>
-					</tr>
-				</table>
+				<div class="table is-replays">
+					<div>
+						<a target="_blank" href="screenshots/merc_rush_110418_full.jpg"><div class="img-container" style="background-image: url(screenshots/merc_rush_110418.jpg)"></div></a>
+						<a href="replays/merc_rush_110418.rcx">Spam Mercenarios</a>
+						<div>"Hide yo kids, hide yo wife, cause they’re rapin’ everybody out here.”</div>
+					</div>
+					<div>
+						<a target="_blank" href="screenshots/vill_war_181118_full.jpg"><div class="img-container" style="background-image: url(screenshots/vill_war_181118.jpg)"></div></a>
+						<a href="replays/vill_war_181118.rcx">Villager War</a>
+						<div>"Me olvidé de hacer casas. GG.”</div>
+					</div>
+					<div>
+						<a target="_blank" href="screenshots/merc_rush_110418_full.jpg"><div class="img-container" style="background-image: url(screenshots/merc_rush_110418.jpg)"></div></a>
+						<a href="replays/merc_rush_110418.rcx">Spam Mercenarios</a>
+						<div>"Hide yo kids, hide yo wife, cause they’re rapin’ everybody out here.”</div>
+					</div>
+					<div>
+						<a target="_blank" href="screenshots/merc_rush_110418_full.jpg"><div class="img-container" style="background-image: url(screenshots/merc_rush_110418.jpg)"></div></a>
+						<a href="replays/merc_rush_110418.rcx">Spam Mercenarios</a>
+						<div>"Hide yo kids, hide yo wife, cause they’re rapin’ everybody out here.”</div>
+					</div>
+				</div>
 			</div>
 		</section>
 		<section class="section">
@@ -176,81 +181,71 @@
 		<section class="section">
 			<div class="container">
 				<h2 id="team">Team <span><small><em>¿Aló? ¿¡TEAM!?</em></small></span></h2>
-				<table>
-					<tr>
-						<td>
-							<h4>Oriep</h4>
-							<p>Mains: Set, Isis</p>
-						</td>
-						<td>
-							<h4>MyDet</h4>
-							<p>Mains: Ra</p>
-						</td>
-						<td>
-							<h4>Ayax</h4>
-							<p>Mains: Gea, Urano</p>
-						</td>
-						<td>
-							<h4>Boxheas</h4>
-							<p>Mains: Loki</p>
-						</td>
-						<td>
-							<h4>Shaggyzard</h4>
-							<p>Mains: Zeus</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<h4>heThorner</h4>
-							<p>Mains: Zeus, Hades</p>
-						</td>
-						<td>
-							<h4>Jean Paul</h4>
-							<p>Mains: Loki</p>
-						</td>
-						<td>
-							<h4>Ernesto</h4>
-							<p>Mains: Random</p>
-						</td>
-						<td>
-							<h4>Óscar "Chorri"</h4>
-							<p>Mains: Hades</p>
-						</td>
-						<td>
-							<h4>Jard</h4>
-							<p>Mains: Hades</p>
-						</td>
-					</tr>
-				</table>
+				<div class="table is-team">
+					<div>
+						<h4>Oriep</h4>
+						<p>Mains: Set</p>
+					</div>
+					<div>
+						<h4>MyDet</h4>
+						<p>Mains: Ra</p>
+					</div>
+					<div>
+						<h4>Ayax</h4>
+						<p>Mains: Gea</p>
+					</div>
+					<div>
+						<h4>Boxheas</h4>
+						<p>Mains: Loki</p>
+					</div>
+					<div>
+						<h4>Shaggyzard</h4>
+						<p>Mains: Zeus</p>
+					</div>
+					<div>
+						<h4>heThorner</h4>
+						<p>Mains: Zeus</p>
+					</div>
+					<div>
+						<h4>Jean Paul</h4>
+						<p>Mains: Loki</p>
+					</div>
+					<div>
+						<h4>Ernesto</h4>
+						<p>Mains: Random</p>
+					</div>
+					<div>
+						<h4>Óscar "Chorri"</h4>
+						<p>Mains: Hades</p>
+					</div>
+					<div>
+						<h4>Jard</h4>
+						<p>Mains: Hades</p>
+					</div>
+				</div>
 			</div>
 		</section>
 		<section class="section">
 				<div class="container">
 				<h2 id="libro">Libro de Visitas :)</h2>
 				<p>Porque un entrañable sitio de la era del módem no estaría completo sin un libro de visitas que promueve el spam y los ataques a nuestros servidores. Estaremos atentos de sus valiosísimos comentarios.</p>
-				<table style="max-width: 1024px">
-					<tr>
-						<td>
-							<h3>César "Chiqui" López</h3>
-							<p>02 de diciembre de 2001</p>
-							<p>Siempre les digo para jugar y ni mierda, gasté 20 soles en la expansión por las huevas; mejor me compraba una caja de chela.</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<h3>Sergio Almeida</h3>
-							<p>02 de diciembre de 2001</p>
-							<p>Mi titán :(</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<h3>La mamá de Ernesto</h3>
-							<p>02 de diciembre de 2001</p>
-							<p>Son unos vagos buenos para nada, mi hijo no es promedio nacional por sus vicios, y encima vienen a cagarme la casa con sus gritos. Están baneados, y esta vez va en serio, ninis de mierda.</p>
-						</td>
-					</tr>
-				</table>
+				<div class="table is-comments" style="max-width: 1024px">
+					<div>
+						<h3>César "Chiqui" López</h3>
+						<p>02 de diciembre de 2001</p>
+						<p>Siempre les digo para jugar y ni mierda, gasté 20 soles en la expansión por las huevas; mejor me compraba una caja de chela.</p>
+					</div>
+					<div>
+						<h3>Sergio Almeida</h3>
+						<p>02 de diciembre de 2001</p>
+						<p>Mi titán :(</p>
+					</div>
+					<div>
+						<h3>La mamá de Ernesto</h3>
+						<p>02 de diciembre de 2001</p>
+						<p>Son unos vagos buenos para nada, mi hijo no es promedio nacional por sus vicios, y encima vienen a cagarme la casa con sus gritos. Están baneados, y esta vez va en serio, ninis de mierda.</p>
+					</div>
+				</div>
 			</div>
 		</section>
 	</main>
